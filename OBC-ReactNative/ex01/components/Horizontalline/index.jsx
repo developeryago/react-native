@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#000', // cor da linha
     marginVertical: 10, // espaço vertical
+    marginBottom: 25,
   },
 });
 
