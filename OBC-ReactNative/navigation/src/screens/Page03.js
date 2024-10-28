@@ -2,40 +2,30 @@ import { View, Text, TouchableOpacity} from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { StyleSheet } from "react-native"
 
-export default function NavigationScreen() {
+export default function Page03 () {
     const navigation = useNavigation()
     const navigateBack = () => {
         navigation.goBack()
     }
 
-    const navigationPag03 = useNavigation()
-    const navigationNativeScreen  = () => {
-        navigationPag03.navigate("Page03")
-    }
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Aula de Navegação</Text>
+            <Text style={styles.title}>Página 3</Text>
             <TouchableOpacity
             activeOpacity={0.8}
             style={styles.button}
             onPress={navigateBack}>
                 <Text style={styles.buttonText}>Voltar</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.button}
-            onPress={navigationNativeScreen}>
-                <Text style={styles.buttonText}>Pag 03</Text>
-            </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex:1,
+    container:{
+        flex: 1,
+        justifyContent: 'center',
         alignItems: "center",
-        justifyContent: "center",
     },
     title: {
         fontSize: 40,
@@ -49,5 +39,5 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "#fff"
-    },
+    }
 })
