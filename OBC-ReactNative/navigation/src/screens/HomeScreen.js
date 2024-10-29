@@ -9,6 +9,13 @@ export default function HomeScreen() {
         navigation.navigate('Navigation')
     }
 
+    const toScrollViewScreen = () => {
+        navigation.navigate("ScrollView")
+    }
+    const toNavigationFlatListScreen = () => {
+        navigation.navigate("FlatListScreen")
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Hello World!</Text>
@@ -19,6 +26,18 @@ export default function HomeScreen() {
             onPress={navigationNativeScreen}>
                
                 <Text style={styles.buttonText}>Aula de Navegação</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={toScrollViewScreen}>
+                <Text style={styles.buttonText}>Aula de ScrollView</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.button}
+            onPress={toNavigationFlatListScreen}>
+                <Text style={styles.buttonText}>Aula de FlatListScreen</Text>
             </TouchableOpacity>
         </View>
     )
