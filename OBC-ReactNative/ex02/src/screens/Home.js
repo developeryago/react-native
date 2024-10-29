@@ -17,9 +17,7 @@ export default function HomeScreen () {
       justifyContent: 'center',
     },
     title: {
-      flex: 1,
       color: "#f64348",
       fontSize: 24,
-  
     }
   });
