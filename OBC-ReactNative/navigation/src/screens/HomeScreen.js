@@ -1,6 +1,7 @@
 import { StatusBar, TouchableOpacity } from "react-native";
 import { StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import NavButton from "../components/NavButton";
 
 export default function HomeScreen() {
 
@@ -20,25 +21,9 @@ export default function HomeScreen() {
         <View style={styles.container}>
             <Text style={styles.title}>Hello World!</Text>
             <StatusBar style="auto"></StatusBar>
-            <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.button} 
-            onPress={navigationNativeScreen}>
-               
-                <Text style={styles.buttonText}>Aula de Navegação</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.button}
-            onPress={toScrollViewScreen}>
-                <Text style={styles.buttonText}>Aula de ScrollView</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.button}
-            onPress={toNavigationFlatListScreen}>
-                <Text style={styles.buttonText}>Aula de FlatListScreen</Text>
-            </TouchableOpacity>
+            <NavButton text="Aula de Navegação" onPress={navigationNativeScreen}/>
+            <NavButton text="Aula de ScrollView" onPress={toScrollViewScreen}/>
+            <NavButton text="Aula de FlatListScree" onPress={toNavigationFlatListScreen}/>
         </View>
     )
 }

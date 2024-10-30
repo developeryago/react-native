@@ -1,6 +1,7 @@
-import { View, Text, TouchableOpacity} from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet} from "react-native"
 import { useNavigation } from "@react-navigation/native"
-import { StyleSheet } from "react-native"
+import NavButton from "../components/NavButton"
+
 
 export default function Page03 () {
     const navigation = useNavigation()
@@ -11,12 +12,7 @@ export default function Page03 () {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Página 3</Text>
-            <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.button}
-            onPress={navigateBack}>
-                <Text style={styles.buttonText}>Voltar</Text>
-            </TouchableOpacity>
+            <NavButton text="Voltar" onPress={navigateBack}/>
         </View>
     )
 }
