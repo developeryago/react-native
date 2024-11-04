@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, Text, View, TouchableOpacity, FlatList } from "react-native";
+import { Text, FlatList } from "react-native";
 import NavButton from "../components/NavButton";
+import Title from "../components/Title";
+import Container from "../components/Container";
 
 export default function FlatListScreen() {
     const navigation = useNavigation()
@@ -9,11 +11,11 @@ export default function FlatListScreen() {
     }
 
     const renderMovie = ({item}) => (
-        <View style={styles.list}>
+        <Container>
             <Text>ID: {item.id}</Text>
             <Text>Filme: {item.title}</Text>
             <Text>Ano: {item.year}</Text>
-        </View>
+        </Container>
     )
     const movies = [
         { id: 1, year: "1994", title: "Um Sonho de Liberdade" },
@@ -29,8 +31,8 @@ export default function FlatListScreen() {
       ]
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>FlatListScreen</Text>
+        <Container>
+            <Title text="FlatListScreen"/>
             
             <FlatList 
                 data={movies}
@@ -38,35 +40,6 @@ export default function FlatListScreen() {
                 keyExtractor={(item) => item.id}
             />
             <NavButton text="Voltar" onPress={navigationBack}/>
-        </View>
+        </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 16,
-        marginHorizontal: 3,
-        marginVertical: 32,
-    },
-    title: {
-        fontSize: 40,
-        color: "#f64348",
-    },
-    button: {
-        backgroundColor: "#000",
-        justifyContent:"center",
-        alignItems: 'center',
-        borderRadius: 10,
-        padding: 10,
-        marginTop: 20
-    },
-    buttonText: {
-        color: "#fff",
-        fontSize: 16
-    },
-    list: {
-        marginTop: 40,
-        marginHorizontal: 10
-    }
-})

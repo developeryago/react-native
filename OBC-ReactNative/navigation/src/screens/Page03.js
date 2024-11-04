@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, StyleSheet} from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import NavButton from "../components/NavButton"
-
+import Container from "../components/Container"
+import Title from "../components/Title"
 
 export default function Page03 () {
     const navigation = useNavigation()
@@ -10,30 +10,9 @@ export default function Page03 () {
     }
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Página 3</Text>
+        <Container>
+            <Title text="Pag03"/>
             <NavButton text="Voltar" onPress={navigateBack}/>
-        </View>
+        </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: "center",
-    },
-    title: {
-        fontSize: 40,
-        color: "#f64348",
-    },
-    button: {
-        backgroundColor: "#1c1a1d",
-        padding: 10,
-        borderRadius: 10,
-        marginTop: 20,
-    },
-    buttonText: {
-        color: "#fff"
-    }
-})
