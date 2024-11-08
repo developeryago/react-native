@@ -17,6 +17,9 @@ export default function HomeScreen() {
     const toNavigationFlatListScreen = () => {
         navigation.navigate("FlatListScreen")
     }
+    const toStyledComponentsScreen = () => {
+        navigation.navigate("StyledComponentsScreen")
+    }
 
     return (
         <Container>
@@ -25,6 +28,7 @@ export default function HomeScreen() {
             <NavButton text="Aula de Navegação" onPress={navigationNativeScreen}/>
             <NavButton text="Aula de ScrollView" onPress={toScrollViewScreen}/>
             <NavButton text="Aula de FlatListScree" onPress={toNavigationFlatListScreen}/>
+            <NavButton text="Aula de StyledComponents" onPress={toStyledComponentsScreen}/>
         </Container>
     )
 }

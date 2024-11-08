@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import {View, Text, StyleSheet} from "react-native";
+import { Text, StyleSheet} from "react-native";
 import { ScrollView } from "react-native";
 import NavButton from "../components/NavButton";
 import Title from "../components/Title";
