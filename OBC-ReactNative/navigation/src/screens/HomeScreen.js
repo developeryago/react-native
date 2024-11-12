@@ -1,8 +1,8 @@
 import { StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import NavButton from "../components/NavButton";
 import Container from "../components/Container";
-import Title from "../components/Title";
+import StyledTitle from "../components/StyledTitle";
+import StyledButton from "../components/StyledButton";
 
 export default function HomeScreen() {
 
@@ -20,15 +20,19 @@ export default function HomeScreen() {
     const toStyledComponentsScreen = () => {
         navigation.navigate("StyledComponentsScreen")
     }
+    const toUsingApiScreen = () => {
+        navigation.navigate("UsingApiScreen")
+    }
 
     return (
         <Container>
-            <Title text="Hello World!!"/>
+            <StyledTitle color="#1a1c">Hello World</StyledTitle>
             <StatusBar style="auto"></StatusBar>
-            <NavButton text="Aula de Navegação" onPress={navigationNativeScreen}/>
-            <NavButton text="Aula de ScrollView" onPress={toScrollViewScreen}/>
-            <NavButton text="Aula de FlatListScree" onPress={toNavigationFlatListScreen}/>
-            <NavButton text="Aula de StyledComponents" onPress={toStyledComponentsScreen}/>
+            <StyledButton onPress={navigationNativeScreen}>Navegação</StyledButton>
+            <StyledButton onPress={toScrollViewScreen}>ScrollView</StyledButton>
+            <StyledButton onPress={toNavigationFlatListScreen}>FlatListScreen</StyledButton>
+            <StyledButton onPress={toStyledComponentsScreen}>StyledComponents</StyledButton>
+            <StyledButton onPress={toUsingApiScreen}>Consumindo API</StyledButton>
         </Container>
     )
 }
